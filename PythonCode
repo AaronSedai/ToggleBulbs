@@ -1,0 +1,17 @@
+n = 5
+command = [[1,3], [2,4], [1,5]]
+
+// use "sb" as the starting condition of the bulb (on or off)
+// use "eb" as the ending condition of the bulb (on or off)
+
+// create a function that will toggle the bulbs on or off
+def toggleBulbs(n, command):
+  bulbs = [0] * n    // initial condition of bulbs (on or off)
+  for sb, eb in command:
+    for i in range(sb - 1, eb):
+      bulbs[i] = (1 - bulbs[i])
+  return bulbs
+
+// find the results of the bulbs after executing the commands
+result = toggleBulbs(n, command)
+print(result)
